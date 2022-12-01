@@ -36,7 +36,7 @@ section:nth-child(odd){
     text-shadow: var(--text-shadow);
     color: var(--black);
     font-size: 3.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 4rem;
 }
 
 .heading span{
@@ -109,12 +109,12 @@ section:nth-child(odd){
 }
 
 .book .row .image{
-    flex: 1 1 30rem;
+    flex: 1 1 25rem;
     margin-top: -8rem;
 }
 
 .book .row .image img{
-    width: 70%;
+    width: 65%;
 }
 
 .book .row form{

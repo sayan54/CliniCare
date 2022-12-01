@@ -35,22 +35,6 @@ section:nth-child(odd) {
     background: #f1f1f1;
 }
 
-/* Navbar items */
-.navbar{
-    background-color: rgba(223, 223, 223, 0.758);
-}
-
-.nav-item {
-    font-size: 1.2rem;
-    font-weight: 450;
-}
-
-.nav-link:hover {
-    transition: ease-in-out;
-    color: #737be9;
-    text-decoration: underline;
-}
-
 /* ----*** Other Self Made Sections ***---- */
 .heading {
     text-align: center;
@@ -109,7 +93,7 @@ section:nth-child(odd) {
     display: flex;
     box-sizing: flexbox;
     flex-wrap: wrap;
-    padding: 2rem;
+    padding: 10rem;
     align-items: center;
     justify-content: center;
 }

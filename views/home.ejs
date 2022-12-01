@@ -10,34 +10,29 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
+    <!-- SWIPER JS CSS -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Oxygen&family=Prompt:wght@300&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="shortcut icon" type="image/xicon" href="./images/logo-icon.jpg">
 
+    
     <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/navbar.css">
 </head>
 
 <body>
     <!-- header section starts -->
-    <header class="header">
-
-        <div id="header-icon">
-            <span><i class="fas fa-ambulance"></i> CliniCare</span>
-        </div>
-
-        <nav class="navbar">
-            <a href="#">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#review">Review</a>
-            <a href="#contact">Contact</a>
-            <a href="/signup" target="_blank">Sign Up</a>
-        </nav>
-
-        <div id="menu-btn" class="fas fa-align-justify"></div>
-    </header>
+    <%- include('../partials/navbar.ejs') -%>
 
     <!-- header section ends -->
     <!-- ------------------------------------- -->
@@ -58,164 +53,65 @@
 
     <!-- Home section ends -->
 
-    <!-- Statistics section -->
-    <section class="services" id="services">
 
-        <h1 class="heading">Our <span>Services</span></h1>
 
-        <div class="box-container">
+    <!-- **** SERVICES Section **** -->
+    <%- include('../partials/services.ejs') -%>
 
-            <div class="box">
-                <i class="fas fa-calendar-plus"></i>
-                <h3>Appointments</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, ab.</p>
-                <a href="#" class="btn">Learn More <span class="fas fa-angle-double-right"></span></a>
-            </div>
 
-            <div class="box">
-                <i class="fas fa-file-medical"></i>
-                <h3>Prescription Management</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, ab.</p>
-                <a href="#" class="btn">Learn More <span class="fas fa-angle-double-right"></span></a>
-            </div>
-
-            <div class="box">
-                <i class="fas fa-capsules"></i>
-                <h3>Medicines List</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, ab.</p>
-                <a href="#" class="btn">Learn More <span class="fas fa-angle-double-right"></span></a>
-            </div>
-
-        </div>
-    </section>
 
     <!--  ****** About Us section *******-->
+    <%- include('../partials/about.ejs') -%>
 
-    <section class="about" id="about">
 
-        <h1 class="heading"><span>About </span>Us</h1>
-
-        <div class="row">
-
-            <div class="image">
-                <img src="./images/home-img.svg" alt="about-us">
-            </div>
-
-            <div class="content">
-                <h3> We Take Care of Your Good</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, cumque, dicta alias perspiciatis ea
-                    vero repellendus culpa ut debitis nisi quam commodi. Vitae porro adipisci facilis ipsam omnis harum
-                    soluta!</p>
-
-                <a href="#" class="btn">Learn More <span class="fas fa-angle-double-right"></span></a>
-            </div>
-        </div>
-    </section>
 
     <!-- ***** Review Section ******* -->
+    <%- include('../partials/review.ejs') -%>
+    
 
-    <section class="review" id="review">
-        <h1 class="heading">Users <span>Review</span></h1>
+    <!-- ****** Contact Section ****** -->
+    <%-include('../partials/contact.ejs') -%>
 
-        <div class="box-container">
 
-            <div class="box">
-                <img src="./images/4990224.jpg" alt="">
 
-                <h3> Rajdeep Mallick </h3>
 
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil
-                    aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente
-                    minus voluptatem, reiciendis consequuntur optio dolorem!</p>
-            </div>
 
-            <div class="box">
-                <img src="./images/3735015.jpg" alt="">
+    <!-- ********* JAVASCRIPT ****** -->
 
-                <h3> Rajdeep Mallick </h3>
+   <!-- *********** Swiper JS **********  -->
+    <script src="./js/swiper-bundle.min.js"></script>
 
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil
-                    aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente
-                    minus voluptatem, reiciendis consequuntur optio dolorem!</p>
-            </div>
+    <script>
+        var swiper = new Swiper(".slide-content", {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            loop: true,
+            centreSlide: true,
+            grabCursor: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
 
-            <div class="box">
-                <img src="./images/4990235.jpg" alt="">
-
-                <h3> Rajdeep Mallick </h3>
-
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil
-                    aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente
-                    minus voluptatem, reiciendis consequuntur optio dolorem!</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ****** Footer Section ****** -->
-
-    <section class="footer" id="contact">
-
-        <div class="box-container">
-
-            <div class="box">
-                <h3>Quick Links</h3>
-                <a href="#"> <i class="fas fa-chevron-right"></i> Home </a>
-                <a href="#about"> <i class="fas fa-chevron-right"></i> About Us </a>
-                <a href="#services"> <i class="fas fa-chevron-right"></i> Services </a>
-                <a href="#contact"> <i class="fas fa-chevron-right"></i> Contact Us </a>
-                <a href="/signup" target="_blank"> <i class="fas fa-chevron-right"></i> Sign Up </a>
-            </div>
-
-            <div class="box">
-                <h3>Our Services</h3>
-                <a href="#"> <i class="fas fa-chevron-right"></i> Appointments </a>
-                <a href="#"> <i class="fas fa-chevron-right"></i> Prescription Management </a>
-                <a href="#"> <i class="fas fa-chevron-right"></i> Medicines List </a>
-            </div>
-
-            <div class="box">
-                <h3>Contact Info</h3>
-                <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
-                <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
-                <a href="#"> <i class="fas fa-envelope"></i> clinicareAdmin@gmail.com </a>
-                <a href="#"> <i class="fas fa-envelope"></i> clinicare@gmail.com </a>
-                <a href="#"> <i class="fas fa-map-marker-alt"></i> Kolkata, India - 700 001 </a>
-            </div>
-
-            <div class="box">
-                <h3>Follow Us</h3>
-                <a href="#"> <i class="fab fa-facebook-f"></i> Facebook </a>
-                <a href="#"> <i class="fab fa-twitter"></i> Twitter </a>
-                <a href="#"> <i class="fab fa-instagram"></i> Instagram </a>
-                <a href="#"> <i class="fab fa-linkedin"></i> Linkedin </a>
-            </div>
-
-        </div>
-
-    </section>
-
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                995: {
+                    slidesPerView: 2,
+                },
+                1388: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+    </script>
+    <!-- ********************************* -->
 </body>
 
 </html>
