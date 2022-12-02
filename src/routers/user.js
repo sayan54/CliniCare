@@ -45,14 +45,7 @@ router.post('/signup', async (req, res) => {
 
         const user = new User(req.body)
 
-        // const token = await user.generateAuthToken()
-
-        // // setting up the cookie with the value
-        // res.cookie('Clinicare', token, {
-        //     expires: new Date(Date.now() + 24*60*60*10),
-        //     httpOnly: true
-        // })
-
+        
         // before calling the save method password must be hashed
         const createUser = await user.save()
 
