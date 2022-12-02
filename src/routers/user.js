@@ -2,11 +2,14 @@ const express = require('express')
 const router = new express.Router()
 const bodyParser = require('body-parser')
 const auth = require('../middleware/auth')
+const cookieParser = require('cookie-parser')
 
 const User = require('../models/userSch')
 
 router.use(express.json())
-router.use(bodyParser.urlencoded({extended: true}))
+router.use(bodyParser.urlencoded({extended: false}))
+router.use(bodyParser.json())
+router.use(cookieParser())
 
 // USER related all the pages will be handled here
 
@@ -27,39 +30,33 @@ router.get('/clinicadd', auth, (req, res) => {
 })
 
 
-//  ****** Sign Up User ******
+//  ----****** Sign Up User ******----
 router.post('/signup', async (req, res) => {
 
     try
     {
-        const user = new User(req.body)
-
         const pw = req.body.password
-        const cpw = req.body.password
+        const cpw = req.body.confirmpassword
 
         if(pw != cpw){
             console.log('Passwords are not matching')
             return res.status(400).render('home')
         }
 
-        const token = await user.generateAuthToken()
+        const user = new User(req.body)
 
-        // console.log('Your auth token is :' + token)
+        // const token = await user.generateAuthToken()
 
-        // setting up the cookie with the value
-        res.cookie('jwt', token, {
-            expires: new Date(Date.now() + 30000),
-            httpOnly: true
-        })
-
-        // console.log(user)
+        // // setting up the cookie with the value
+        // res.cookie('Clinicare', token, {
+        //     expires: new Date(Date.now() + 24*60*60*10),
+        //     httpOnly: true
+        // })
 
         // before calling the save method password must be hashed
         const createUser = await user.save()
 
-        // console.log(createUser)
-
-        res.status(201).redirect('/signup')
+        res.status(201).render('signup')
     }
 
     catch(err){
@@ -73,7 +70,6 @@ router.post('/signup', async (req, res) => {
 router.post('/signin', async (req, res) => {
 
     try{
-
         const email = req.body.email
         const password = req.body.password
 
@@ -81,17 +77,16 @@ router.post('/signin', async (req, res) => {
         
         const token = await user.generateAuthToken()
 
-        res.cookie('login', token, {
-            expires: new Date(Date.now() + 30000),
+        res.cookie('Clinicare', token, {
+            expires: new Date(Date.now() + 24*60*60*10),
             httpOnly: true
         })
 
         res.status(200).render('dashboard')
     }
 
-
     catch(error){
-        console.log(req.body)
+        // console.log(req.body)
         res.status(400).send('Sahi se Details dee bhai')
     }
 })
