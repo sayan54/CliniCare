@@ -1,4 +1,5 @@
 require('./src/db/conn')
+require('dotenv').config()
 const express = require('express')
 const userRouter = require('./src/routers/user')
 
