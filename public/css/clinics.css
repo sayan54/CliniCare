@@ -24,7 +24,10 @@ html {
 
 section {
     display: flex;
-    gap: 2rem;
+}
+
+body{
+    padding-top: 6rem;
 }
 
 section:nth-child(even) {
@@ -35,65 +38,22 @@ section:nth-child(odd) {
     background: #f1f1f1;
 }
 
-/* ----*** Other Self Made Sections ***---- */
-.heading {
-    text-align: center;
+/* ---- */
+.list-heading{
+    font-size: 4.1rem;
     color: var(--black);
-    font-size: 2rem;
 }
 
-.heading img {
-    margin-bottom: 0.5rem;
-}
-
-.navrbar .container-fluid .header span{
-    font-size: 2.2rem;
-    margin-left: 0.4rem;
+.list-heading span{
     color: var(--blue);
 }
-
-/* ---- Button's CSS ----- */
-
-.btn{
-    display: inline-block;
-    margin-top: 0.8rem;
-    padding: 1rem;
-    padding-left: 1rem;
-    border-radius: .5rem;
-    border: var(--border);
-    cursor: pointer;
-    font-size: larger;
-    color: rgb(7, 7, 7);
-    box-shadow: var(--box-shadow);
-    background-color: #fff;
-}
-
-.btn span{
-    padding: 0.3rem 0.8rem;
-    border-radius: 0.4rem;
-    background: var(--blue);
-    color: #fff;
-    margin: 0.4rem;
-}
-
-.btn:hover{
-    background: var(--blue);
-    color: #fff;
-}
-
-.btn:hover span{
-    color: var(--blue);
-    background: #fff;
-    margin-left: 1rem;
-}
-
 
 /* ------ Clinics Section ---- */
 .clinics{
     display: flex;
     box-sizing: flexbox;
     flex-wrap: wrap;
-    padding: 10rem;
+    padding: 3rem;
     align-items: center;
     justify-content: center;
 }
@@ -103,40 +63,74 @@ section:nth-child(odd) {
     border: var(--border);
     border-radius: 0.8rem;
     text-align: left;
-    background-color: #737be9;
-    color: #f1f1f1;
     box-shadow: var(--skill-box-shadow);
-
+    margin-bottom: 1.5rem;
 }
 
-.clinics .clinic h4,
-.clinics .clinic h5{
-    margin-bottom: 0.6rem;
-    color: white;
+.clinics .clinic:hover{
+    scale: 1.05;
 }
 
-.clinics .clinic h4{
+.clinics .clinic .clinic-heading{
+    text-align: center;
+    font-weight: bold;
     font-size: 2rem;
-    font-weight: 450;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    background-color: #676fdd;
+    padding: 0.8rem;
 }
 
+.clinics .clinic .clinic-content>div{
+    padding: 0.7rem;
+    max-width: 400px;
+}
 
-.clinics .clinic i{
+.clinics .clinic .clinic-content>i{
+    font-size: 3.5rem;
+}
+
+.clinics .clinic .clinic-content>div>span{
+    color: #505beb;
+    font-size: 1.3rem;
+}
+
+.each-content{
+    color: black;
+    font-size: 1.1rem;
+}
+
+.clinic-icon{
+    color: #505beb;
+}
+
+.clinic-icon:before {
     margin-right: 0.5rem;
 }
 
-.clinics .clinic .heading{
-    color: #fff;
+
+.slide-container {
+    width: 100%;
+    padding-bottom: 2.2rem;
+}
+
+.slide-content {
+    margin: 0 1.5rem;
+    overflow: hidden;
+    padding: 1.5rem;
+}
+
+.swiper-button-next::after {
+    margin-left: 1.5rem;
+}
+
+.swiper-button-prev::after {
+    margin-right: 1.5rem;
 }
 
 
-.clinics .add-button{
-    background: rgb(201, 198, 198, 0.35);
-    padding: 2rem;
-    border-radius: 2.5rem;
+#clinic-image img{
+    height: 15rem;
+    width: 15rem;
 }
 
-.clinics .add-button img{
-    height: 14rem;
-    width: 14rem;
-}

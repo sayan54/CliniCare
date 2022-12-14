@@ -10,7 +10,7 @@ const auth = async (req, res, next) => {
         // console.log
         const token = req.cookies.Clinicare
 
-        console.log(token)
+        // console.log(token)
 
         const verifyUser = jwt.verify(token, SECRET)
 

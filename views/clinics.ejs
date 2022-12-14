@@ -1,91 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- ------***** CLINICS SECTION *****------ -->
+<section class="clinics">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinics | CliniCare</title>
+    <h1 class="list-heading">
+        <i class="fas fa-clone"></i>
+        Clinics <span>List</span>
+    </h1>
 
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <div class="swiper slide-container">
+
+        <div class="slide-content">
+
+            <div class="swiper-wrapper card-wrapper">
+
+                <div class="swiper-slide clinic">
+                    <div class="clinic-heading">
+                        <h2>ABC Pharmacy</h2>
+                    </div>
+
+                    <div class="clinic-content">
+                        <div class="doc-name">
+                            <span><i class="fas fa-user-nurse clinic-icon"></i> Doctor : <span class="each-content">
+                                    Dr. Abhishek Banerjee</span></span>
+                        </div>
+                        <div class="phone-number">
+                            <span><i class="fas fa-phone clinic-icon"></i> Phone Number : <span class="each-content">
+                                    +91 7029422038</span></span>
+                        </div>
+                        <div class="address">
+                            <span><i class="fas fa-clinic-medical clinic-icon"></i> Address : <span
+                                    class="each-content"> Chingrighata, Kolkata</span></span>
+                        </div>
+                        <div class="close-day">
+                            <span><i class="fas fa-window-close clinic-icon"></i> Closed On : <span
+                                    class="each-content"> Sunday, Thursday</span></span>
+                        </div>
+                    </div>
+                </div>
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+                <div class="swiper-slide clinic">
+                    <div class="clinic-heading">
+                        <h2>ABC Pharmacy</h2>
+                    </div>
 
-    
-    <link rel="stylesheet" href="./css/navbar.css">
-    <link rel="stylesheet" href="./css/clinics.css">
-</head>
+                    <div class="clinic-content">
+                        <div class="doc-name">
+                            <span><i class="fas fa-user-nurse clinic-icon"></i> Doctor : <span class="each-content">
+                                    Dr. Abhishek Banerjee</span></span>
+                        </div>
+                        <div class="phone-number">
+                            <span><i class="fas fa-phone clinic-icon"></i> Phone Number : <span class="each-content">
+                                    +91 7029422038</span></span>
+                        </div>
+                        <div class="address">
+                            <span><i class="fas fa-clinic-medical clinic-icon"></i> Address : <span
+                                    class="each-content"> Chingrighata, Kolkata</span></span>
+                        </div>
+                        <div class="close-day">
+                            <span><i class="fas fa-window-close clinic-icon"></i> Closed On : <span
+                                    class="each-content"> Sunday, Thursday</span></span>
+                        </div>
+                    </div>
+                </div>
 
-<body>
-    <!-- header section starts -->
-    <%- include('../partials/navbar.ejs') -%>
 
-    <!-- ********** NAVBAR ENDS **********-->
+                <div class="swiper-slide clinic">
+                    <div class="clinic-heading">
+                        <h2>ABC Pharmacy</h2>
+                    </div>
 
+                    <div class="clinic-content">
+                        <div class="doc-name">
+                            <span><i class="fas fa-user-nurse clinic-icon"></i> Doctor : <span class="each-content">
+                                    Dr. Abhishek Banerjee</span></span>
+                        </div>
+                        <div class="phone-number">
+                            <span><i class="fas fa-phone clinic-icon"></i> Phone Number : <span class="each-content">
+                                    +91 7029422038</span></span>
+                        </div>
+                        <div class="address">
+                            <span><i class="fas fa-clinic-medical clinic-icon"></i> Address : <span
+                                    class="each-content"> Chingrighata, Kolkata</span></span>
+                        </div>
+                        <div class="close-day">
+                            <span><i class="fas fa-window-close clinic-icon"></i> Closed On : <span
+                                    class="each-content"> Sunday, Thursday</span></span>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- ------***** CLINICS SECTION *****------ -->
-    <section class="clinics">
+            </div>
 
-        <div class="clinic">
-            <h4>ABC Pharmacy</h4>
-            <h5>Doctor : S.B.Banerjee</h5>
-            <p><i class="fas fa-phone"></i> Phone Number : +91 7029422038</p>
-            <p><i class="fas fa-home"></i> Address : Salt Lake, Kolkata</p>
-            <p><i class="fas fa-envelope-open"></i> PIN - 700 098</p>
+            <div class="swiper-button-next swiper-button"></div>
+            <div class="swiper-button-prev swiper-button"></div>
+            <div class="swiper-pagination swiper-pg-button"></div>
+
         </div>
 
+    </div>
 
-        <div class="clinic">
-            <h4>ABC Pharmacy</h4>
-            <h5>Doctor : S.B.Banerjee</h5>
-            <p><i class="fas fa-phone"></i> Phone Number : +91 7029422038</p>
-            <p><i class="fas fa-home"></i> Address : Salt Lake, Kolkata</p>
-            <p><i class="fas fa-envelope-open"></i> PIN - 700 098</p>
-        </div>
+    <div id="clinic-image">
+        <img src="./images/add files.svg" alt="">
+
+        <span>
+            <a href="/clinicadd" target="_blank">
+                <button class="btn">
+                    Add New Clinic <span class="fas fa-angle-double-right"></span>
+                </button>
+            </a>
+        </span>
+    </div>
+
+</section>
 
 
-        <div class="clinic">
-            <h4>ABC Pharmacy</h4>
-            <h5>Doctor : S.B.Banerjee</h5>
-            <p><i class="fas fa-phone"></i> Phone Number : +91 7029422038</p>
-            <p><i class="fas fa-home"></i> Address : Salt Lake, Kolkata</p>
-            <p><i class="fas fa-envelope-open"></i> PIN - 700 098</p>
-        </div>
+<script src="./js/swiper-bundle.min.js"></script>
 
-        <div class="clinic">
-            <h4>ABC Pharmacy</h4>
-            <h5>Doctor : S.B.Banerjee</h5>
-            <p><i class="fas fa-phone"></i> Phone Number : +91 7029422038</p>
-            <p><i class="fas fa-home"></i> Address : Salt Lake, Kolkata</p>
-            <p><i class="fas fa-envelope-open"></i> PIN - 700 098</p>
-        </div>
+<script>
+    var swiper = new Swiper(".slide-content", {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        loop: true,
+        centreSlide: true,
+        grabCursor: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
 
-        <div class="clinic">
-            <h4>ABC Pharmacy</h4>
-            <h5>Doctor : S.B.Banerjee</h5>
-            <p><i class="fas fa-phone"></i> Phone Number : +91 7029422038</p>
-            <p><i class="fas fa-home"></i> Address : Salt Lake, Kolkata</p>
-            <p><i class="fas fa-envelope-open"></i> PIN - 700 098</p>
-        </div>
-
-        <div class="clinic">
-            <h4>ABC Pharmacy</h4>
-            <h5>Doctor : S.B.Banerjee</h5>
-            <p><i class="fas fa-phone"></i> Phone Number : +91 7029422038</p>
-            <p><i class="fas fa-home"></i> Address : Salt Lake, Kolkata</p>
-            <p><i class="fas fa-envelope-open"></i> PIN - 700 098</p>
-        </div>
-
-        <div class="add-button">
-            <img src="./images/add files.svg" alt="">
-            <a class="btn" href="/clinicadd" type="submit" target="_blank">Add Clinic <span><i class="fas fa-angle-double-right"></i></span></a>
-        </div>
-
-    </section>
-
-</body>
-
-</html>
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            995: {
+                slidesPerView: 2,
+            },
+            1388: {
+                slidesPerView: 3,
+            },
+        },
+    });
+</script>

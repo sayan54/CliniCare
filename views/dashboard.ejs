@@ -18,12 +18,10 @@
     <!-- **** Adding Some CSS for specific work **** -->
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/button.css">
-
-
-
-
-
     <link rel="stylesheet" href="./css/dashboard.css">
+
+    <link rel="stylesheet" href="./css/clinics.css">
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -32,6 +30,14 @@
     <%- include('../partials/navbar.ejs') -%>
 
     <!-- ********** NAVBAR ENDS **********-->
+
+
+    <!-- -----*** Clinics list STARTS *****------- -->
+
+    <%- include('../views/clinics.ejs') -%>
+
+    <!-- ********** Clinics list ENDS **********-->
+
 
     <!-- ---- Documents Section ---- -->
 
@@ -68,7 +74,7 @@
                         officiis aut quasi debitis sit maiores fugit quam impedit, laboriosam voluptatem
                         nesciunt
                         provident neque dicta hic!</p>
-                    <a href="../public/files/Assignment_CloudComputing_22-23.pdf" target="_blank"
+                    <a href="/files/Assignment_CloudComputing_22-23.pdf" target="_blank"
                         class="btn">Prescription <span class="fas fa-angle-double-right"></span></a>
 
                 </div>

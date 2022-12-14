@@ -1,5 +1,5 @@
 <section class="review" id="reviews">
-        
+
     <h1 class="heading">Users <span>Review</span></h1>
 
 
@@ -11,9 +11,9 @@
 
                 <div class="swiper-slide box">
                     <!-- <img src="./images/4990224.jpg" alt=""> -->
-    
+
                     <h3> Rajdeep Mallick </h3>
-    
+
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -24,16 +24,17 @@
 
                     <div class="text">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil
-                        aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente
+                        aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias
+                        sapiente
                         minus voluptatem, reiciendis consequuntur optio dolorem!
                     </div>
                 </div>
 
                 <div class="swiper-slide box">
                     <!-- <img src="./images/4990224.jpg" alt=""> -->
-    
+
                     <h3> Rajdeep Mallick </h3>
-    
+
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -43,16 +44,17 @@
                     </div>
 
                     <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil
-                        aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente
+                        aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias
+                        sapiente
                         minus voluptatem, reiciendis consequuntur optio dolorem!</div>
                 </div>
 
 
                 <div class="swiper-slide box">
                     <!-- <img src="./images/4990224.jpg" alt=""> -->
-    
+
                     <h3> Rajdeep Mallick </h3>
-    
+
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -63,16 +65,17 @@
 
                     <div class="text">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil
-                        aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente
+                        aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias
+                        sapiente
                         minus voluptatem, reiciendis consequuntur optio dolorem!
                     </div>
                 </div>
 
                 <div class="swiper-slide box">
                     <!-- <img src="./images/4990224.jpg" alt=""> -->
-    
+
                     <h3> Rajdeep Mallick </h3>
-    
+
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -83,16 +86,17 @@
 
                     <div class="text">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil
-                        aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente
+                        aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias
+                        sapiente
                         minus voluptatem, reiciendis consequuntur optio dolorem!
                     </div>
                 </div>
 
                 <div class="swiper-slide box">
                     <!-- <img src="./images/4990224.jpg" alt=""> -->
-    
+
                     <h3> Rajdeep Mallick </h3>
-    
+
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -103,7 +107,8 @@
 
                     <div class="text">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil
-                        aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente
+                        aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias
+                        sapiente
                         minus voluptatem, reiciendis consequuntur optio dolorem!
                     </div>
                 </div>
@@ -117,5 +122,41 @@
         </div>
 
     </div>
-    
+
 </section>
+
+
+
+<!-- *********** Swiper JS **********  -->
+<script src="./js/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".slide-content", {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        loop: true,
+        centreSlide: true,
+        grabCursor: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            995: {
+                slidesPerView: 2,
+            },
+            1388: {
+                slidesPerView: 3,
+            },
+        },
+    });
+</script>

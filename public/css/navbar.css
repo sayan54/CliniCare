@@ -14,10 +14,15 @@
 .nav,
 .nav .nav-links {
     display: flex;
+    margin-bottom: 1.3rem;
 }
 
 .nav .nav-links li {
     margin-left: 2.8rem;
+}
+
+.nav .nav-links li:hover{
+    scale: 1.2;
 }
 
 .nav a,
