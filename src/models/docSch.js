@@ -1,29 +1,26 @@
 const mongoose = require('mongoose')
 
 const docSchema = new mongoose.Schema({
+    person_id: {
+        type: String
+    },
     docName: {
         type: String,
         required: true
     },
-    clinicName: {
-        type: String,
-        required: true
+    date: {
+        type: Date
     },
     visitDate: {
         type: Date,
         required: true
     },
     description: {
-        type: String
+        type: String,
     },
-    files: [
-        {
-            file: {
-                type: File,
-                unique: true
-            }
-        }
-    ]
+    // file: {
+    //     type: Binary data,
+    // }
 })
 
 const Document = mongoose.model('Document', docSchema)

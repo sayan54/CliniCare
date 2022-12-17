@@ -15,12 +15,11 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <link rel="stylesheet" href="./css/docadd.css">
-
 
     <!-- Some specific CSS for stylings -->
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/button.css">
+    <link rel="stylesheet" href="./css/clinicadd.css">
 
 </head>
 
@@ -32,7 +31,7 @@
 
     <section class="book" id="book">
 
-        <h3 class="heading"> <span> <i class="fas fa-layer-group"></i> Add</span> Clinic</h3>
+        <h3 class="heading"> <span> <i class="fas fa-briefcase-medical"></i> Add</span> Clinic</h3>
 
         <div class="row">
 
@@ -40,17 +39,44 @@
                 <img src="./images/add files.svg" alt="">
             </div>
 
-            <form action="" method="POST">
+            <form action="/clinicadd" method="POST">
 
-                <h3 class="heading">Enter Cli<span>nic Details</span></h3>
+                <h3 class="heading close-day-heading">Enter Cli<span>nic Details</span></h3>
 
                 <input type="text" name="clinic_name" placeholder="Enter Clinic's Name" class="box">
 
                 <input type="text" name="doctor_name" placeholder="Enter Doctor's Name" class="box">
 
+                <input type="text" name="phone_number" placeholder="Enter Phone Number" class="box">
+
                 <input type="text" name="address" placeholder="Enter Address" class="box">
 
-                <input type="text" name="close_days" placeholder="Enter Close Days" class="box">
+                <h4 class="heading close-day-heading">Closed <span>On</span></h4>
+
+                <div class="days">
+
+                    <input type="checkbox" id="sunday" name="days" value="Sunday">
+                    <label for="sunday">Sunday</label>
+
+                    <input type="checkbox" id="monday" name="days" value="Monday">
+                    <label for="monday">Monday</label>
+
+                    <input type="checkbox" id="tuesday" name="days" value="Tuesday">
+                    <label for="tuesday">Tuesday</label>
+
+
+                    <input type="checkbox" id="wednesday" name="days" value="Wednesday">
+                    <label for="wednesday">Wednesday</label>
+
+                    <input type="checkbox" id="sunday" name="days" value="Thursday">
+                    <label for="thursday">Thursday</label>
+
+                    <input type="checkbox" id="sunday" name="days" value="Friday">
+                    <label for="friday">Friday</label>
+
+                    <input type="checkbox" id="sunday" name="days" value="Saturday">
+                    <label for="saturday">Saturday</label>
+                </div>
                 
                 <button type="submit" class="btn">Submit <span class="fas fa-angle-double-right"></span></button>
 

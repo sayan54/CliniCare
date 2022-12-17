@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
-    
+
     <link rel="stylesheet" href="./css/docadd.css">
     <link rel="stylesheet" href="./css/navbar.css">
 </head>
@@ -25,72 +25,71 @@
     <!-- header section starts -->
     <%- include('../partials/navbar.ejs') -%>
 
-    <!-- Header section ends -->
+        <!-- Header section ends -->
 
-    <section class="book" id="book">
+        <section class="book" id="book">
 
-        <h3 class="heading"> <span> <i class="fas fa-layer-group"></i> Add</span> Document</h3>
+            <h3 class="heading"> <span> <i class="fas fa-layer-group"></i> Add</span> Document</h3>
 
-        <div class="row">
+            <div class="row">
 
-            <div class="image">
-                <img src="./images/add docs.svg" alt="documentAdd">
+                <div class="image">
+                    <img src="./images/add docs.svg" alt="documentAdd">
+                </div>
+
+                <form action="/docadd" method="post" id="docForm">
+
+                    <h3 class="heading">Enter Docu<span>ment Details</span></h3>
+
+                    <input type="text" name="docName" placeholder="Enter Doctor's Name" class="box">
+                    <input type="text" name="clinicName" placeholder="Enter Clinic's Name" class="box">
+                    <input type="date" name="visitDate" placeholder="Enter Visiting Date" class="box">
+                    <textarea name="description" cols="30" rows="5" class="box"
+                        placeholder="Enter description of document"></textarea>
+
+                    <label class="box boxfill">
+                        <i class="fas fa-file-upload"></i>
+                        Browse File to Upload
+                        <input type="binData" name="file" class="fileInput" hidden>
+                    </label>
+
+                    <div class="allFiles">
+                        
+                    </div>
+
+                    <button type="submit" class="btn">Submit <span class="fas fa-angle-double-right"></span></button>
+
+                </form>
+
             </div>
 
-            <form action="/docadd" method="post" id="docForm">
+        </section>
 
-                <h3 class="heading">Enter Docu<span>ment Details</span></h3>
 
-                <input type="text" name="docName" placeholder="Enter Doctor's Name" class="box">
-                <input type="text" name="clinicName" placeholder="Enter Clinic's Name" class="box">
-                <input type="date" name="visitDate" placeholder="Enter Visiting Date" class="box">
-                <textarea name="description" cols="30" rows="5" class="box" placeholder="Enter description of document"></textarea>
+        <script>
 
-                <label class="box boxfill"> 
-                    <i class="fas fa-file-upload"></i>
-                     Browse File to Upload
-                    <input type="file" name="file" class="fileInput" hidden>
-                </label>
+            const { value: file } = await Swal.fire({
+                title: 'Select image',
+                input: 'file',
+                inputAttributes: {
+                    'accept': 'file/*',
+                    'aria-label': 'Upload your profile picture'
+                }
+            })
 
-                <div class="allFiles">
-                    <!-- <div class="box files">
-                        <i class="fas fa-file-pdf"></i>
-                        Resume.pdf
-                    </div> -->
-                </div>
-                
-                <button type="submit" class="btn">Submit <span class="fas fa-angle-double-right"></span></button>
+            if (file) {
+                const reader = new FileReader()
+                reader.onload = (e) => {
+                    Swal.fire({
+                        title: 'Your uploaded picture',
+                        imageUrl: e.target.result,
+                        imageAlt: 'The uploaded picture'
+                    })
+                }
+                reader.readAsDataURL(file)
+            }
 
-            </form>
-
-        </div>
-
-    </section>
-
-        
-    <script>
-
-        var fileInput = document.querySelector('.fileInput');
-        var allFiles = document.querySelector('.allFiles');
-
-        fileInput.onchange = ({target}) => {
-
-            console.log(target.files.length);
-            console.log(target.files[0]);
-
-            const newDiv = document.createElement('div');
-            newDiv.classList.add('box', 'files');
-
-            if(target.files[0].name.length >= 50)
-                newDiv.innerHTML = '<i class="fas fa-file-pdf"></i>' + target.files[0].name.substring(0, 51) + '....';
-
-            else
-                newDiv.innerHTML = '<i class="fas fa-file-pdf"></i>' + target.files[0].name;
-
-            allFiles.appendChild(newDiv);
-        }
-    
-    </script>
+        </script>
 </body>
 
 </html>

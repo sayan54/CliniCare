@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CliniCare | Profile</title>
+    <title>Dashboard</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,161 +27,160 @@
 <body>
     <!-- -----*** NAVBAR SECTION STARTS HERE *****------- -->
 
-    <%- include('../partials/navbar.ejs') -%>
+    <%- include('../partials/navbar.ejs') %>
 
-    <!-- ********** NAVBAR ENDS **********-->
-
-
-    <!-- -----*** Clinics list STARTS *****------- -->
-
-    <%- include('../views/clinics.ejs') -%>
-
-    <!-- ********** Clinics list ENDS **********-->
+        <!-- ********** NAVBAR ENDS **********-->
 
 
-    <!-- ---- Documents Section ---- -->
+        <!-- ---- Documents Section ---- -->
 
-    <section class="documents-container" id="mydocs">
+        <section class="documents-container" id="mydocs">
 
-        <div class="documents">
+            <div class="documents">
 
-            <h1 class="heading">
-                <i class="fas fa-folder-open"></i>
-                My <span>Documents</span>
-            </h1>
+                <h1 class="heading">
+                    <i class="fas fa-folder-open"></i>
+                    My <span>Documents</span>
+                </h1>
 
-            <div class="box">
+                <div class="box">
 
-                <div class="image-heading">
+                    <div class="image-heading">
 
-                    <div class="image">
-                        <i class="fas fa-user"></i>
+                        <div class="image">
+                            <i class="fas fa-user"></i>
+                        </div>
+
+                        <div>
+                            <h3>Dr. Rajdeep <span>Mallick</span></h3>
+                            <p> Date : 23.06.2022</p>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <h3>Dr. Rajdeep <span>Mallick</span></h3>
-                        <p> Date : 23.06.2022</p>
+                    <div class="document-description">
+
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum. Lorem ipsum
+                            dolor sit
+                            amet
+                            consectetur adipisicing elit. Itaque expedita eaque totam obcaecati minus
+                            inventore
+                            aliquid
+                            officiis aut quasi debitis sit maiores fugit quam impedit, laboriosam voluptatem
+                            nesciunt
+                            provident neque dicta hic!</p>
+                        <a href="/files/Assignment_CloudComputing_22-23.pdf" target="_blank" class="btn">Prescription
+                            <span class="fas fa-angle-double-right"></span></a>
+
                     </div>
 
                 </div>
 
-                <div class="document-description">
+                <div class="box">
 
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum. Lorem ipsum dolor sit
-                        amet
-                        consectetur adipisicing elit. Itaque expedita eaque totam obcaecati minus inventore
-                        aliquid
-                        officiis aut quasi debitis sit maiores fugit quam impedit, laboriosam voluptatem
-                        nesciunt
-                        provident neque dicta hic!</p>
-                    <a href="/files/Assignment_CloudComputing_22-23.pdf" target="_blank"
-                        class="btn">Prescription <span class="fas fa-angle-double-right"></span></a>
+                    <div class="image-heading">
 
+                        <div class="image">
+                            <i class="fas fa-user"></i>
+                        </div>
+
+                        <div>
+                            <h3>Dr. Rajdeep <span>Mallick</span></h3>
+                            <p> Date : 23.06.2022</p>
+                        </div>
+
+                    </div>
+
+                    <div class="document-description">
+
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum. Lorem ipsum
+                            dolor sit
+                            amet
+                            consectetur adipisicing elit. Itaque expedita eaque totam obcaecati minus
+                            inventore
+                            aliquid
+                            officiis aut quasi debitis sit maiores fugit quam impedit, laboriosam voluptatem
+                            nesciunt
+                            provident neque dicta hic!</p>
+                        <a href="../public/files/Assignment_CloudComputing_22-23.pdf" target="_blank"
+                            class="btn">Prescription <span class="fas fa-angle-double-right"></span></a>
+
+                    </div>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="image-heading">
+
+                        <div class="image">
+                            <i class="fas fa-user"></i>
+                        </div>
+
+                        <div>
+                            <h3>Dr. Rajdeep <span>Mallick</span></h3>
+                            <p> Date : 23.06.2022</p>
+                        </div>
+
+                    </div>
+
+                    <div class="document-description">
+
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum. Lorem ipsum
+                            dolor sit
+                            amet
+                            consectetur adipisicing elit. Itaque expedita eaque totam obcaecati minus
+                            inventore
+                            aliquid
+                            officiis aut quasi debitis sit maiores fugit quam impedit, laboriosam voluptatem
+                            nesciunt
+                            provident neque dicta hic!</p>
+                        <a href="../public/files/Assignment_CloudComputing_22-23.pdf" target="_blank"
+                            class="btn">Prescription <span class="fas fa-angle-double-right"></span></a>
+
+                    </div>
+
+                </div>
+
+                <div class="image" id="document-image">
+                    <img src="./images/add docs.svg" alt="">
+
+                    <span>
+                        <a href="/docadd" target="_blank">
+                            <button class="btn">
+                                Add Document <span class="fas fa-angle-double-right"></span>
+                            </button>
+                        </a>
+                    </span>
                 </div>
 
             </div>
 
-            <div class="box">
-
-                <div class="image-heading">
-
-                    <div class="image">
-                        <i class="fas fa-user"></i>
-                    </div>
-
-                    <div>
-                        <h3>Dr. Rajdeep <span>Mallick</span></h3>
-                        <p> Date : 23.06.2022</p>
-                    </div>
-
-                </div>
-
-                <div class="document-description">
-
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum. Lorem ipsum dolor sit
-                        amet
-                        consectetur adipisicing elit. Itaque expedita eaque totam obcaecati minus inventore
-                        aliquid
-                        officiis aut quasi debitis sit maiores fugit quam impedit, laboriosam voluptatem
-                        nesciunt
-                        provident neque dicta hic!</p>
-                    <a href="../public/files/Assignment_CloudComputing_22-23.pdf" target="_blank"
-                        class="btn">Prescription <span class="fas fa-angle-double-right"></span></a>
-
-                </div>
-
-            </div>
-
-            <div class="box">
-
-                <div class="image-heading">
-
-                    <div class="image">
-                        <i class="fas fa-user"></i>
-                    </div>
-
-                    <div>
-                        <h3>Dr. Rajdeep <span>Mallick</span></h3>
-                        <p> Date : 23.06.2022</p>
-                    </div>
-
-                </div>
-
-                <div class="document-description">
-
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum. Lorem ipsum dolor sit
-                        amet
-                        consectetur adipisicing elit. Itaque expedita eaque totam obcaecati minus inventore
-                        aliquid
-                        officiis aut quasi debitis sit maiores fugit quam impedit, laboriosam voluptatem
-                        nesciunt
-                        provident neque dicta hic!</p>
-                    <a href="../public/files/Assignment_CloudComputing_22-23.pdf" target="_blank"
-                        class="btn">Prescription <span class="fas fa-angle-double-right"></span></a>
-
-                </div>
-
-            </div>
-
-            <div class="image" id="document-image">
-                <img src="./images/add docs.svg" alt="">
-
-                <span>
-                    <a href="/docadd" target="_blank">
-                        <button class="btn">
-                            Add Document <span class="fas fa-angle-double-right"></span>
-                        </button>
-                    </a>
-                </span>
-            </div>
+        </section>
 
         </div>
 
-    </section>
+        </div>
 
-    </div>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
-    </div>
+        <script>
 
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-
-    <script>
-
-        const nav = document.querySelector(".nav"),
-            navOpenBtn = document.querySelector(".navOpenBtn"),
-            navCloseBtn = document.querySelector(".navCloseBtn");
+            const nav = document.querySelector(".nav"),
+                navOpenBtn = document.querySelector(".navOpenBtn"),
+                navCloseBtn = document.querySelector(".navCloseBtn");
 
 
-        navOpenBtn.addEventListener("click", () => {
-            nav.classList.add("openNav");
-        });
+            navOpenBtn.addEventListener("click", () => {
+                nav.classList.add("openNav");
+            });
 
 
-        navCloseBtn.addEventListener("click", () => {
-            nav.classList.remove("openNav");
-        });
+            navCloseBtn.addEventListener("click", () => {
+                nav.classList.remove("openNav");
+            });
 
-    </script>
+        </script>
 </body>
 
 </html>

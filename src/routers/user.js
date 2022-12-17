@@ -5,9 +5,12 @@ const auth = require('../middleware/auth')
 const cookieParser = require('cookie-parser')
 
 const User = require('../models/userSch')
+const Clinic = require('../models/clinicSch')
+const Document = require('../models/docSch')
+
 
 router.use(express.json())
-router.use(bodyParser.urlencoded({ extended: false}))
+router.use(bodyParser.urlencoded({ extended: true }))
 router.use(bodyParser.json())
 router.use(cookieParser())
 
@@ -15,14 +18,25 @@ router.use(cookieParser())
 
 router.get('/dashboard', auth, (req, res) => {
     res.render('dashboard', {
-        username: req.user.username
+        username: req.user.username,
     })
 })
 
-router.get('/clinics', auth, (req, res) => {
-    res.render('clinics', {
-        username: req.user.username
-    })
+router.get('/clinics', auth, async (req, res) => {
+    try {
+        const person_id = req.user._id
+
+        const all_clinics = await Clinic.find({ "person_id": person_id })
+
+        res.render('clinics', {
+            username: req.user.username,
+            clinics: all_clinics,
+        })
+    }
+
+    catch (err) {
+        res.status(400).send(err)
+    }
 })
 
 router.get('/docadd', auth, (req, res) => {
@@ -60,7 +74,7 @@ router.post('/signup', async (req, res) => {
     }
 
     catch (err) {
-        console.log('Error found while sign up' + err)
+        // console.log('Error found while sign up' + err)
         res.status(400).send(err)
     }
 })
@@ -92,8 +106,39 @@ router.post('/signin', async (req, res) => {
 })
 
 
-router.post('/docadd', auth, (req, res) => {
-    res.render('docadd')
+router.post('/docadd', auth, async (req, res) => {
+
+    try {
+        console.log(req.body)
+
+        res.render('docadd')
+    }
+
+    catch (error) {
+        // console.log(error)
+        res.status(400).send(error)
+    }
+})
+
+router.post('/clinicadd', auth, async (req, res) => {
+
+    try {
+        // const obj = req.body
+        // obj.person_id = req.user._id
+
+        // console.log(obj)
+
+        const clinic = new Clinic(req.body)
+
+        const createClinic = await clinic.save()
+
+        res.render('clinicadd')
+    }
+
+    catch (error) {
+        // console.log(error)
+        res.status(400).send(error)
+    }
 })
 
 
