@@ -3,6 +3,8 @@ const router = new express.Router()
 const bodyParser = require('body-parser')
 const auth = require('../middleware/auth')
 const cookieParser = require('cookie-parser')
+const multer = require('multer')
+
 
 const User = require('../models/userSch')
 const Clinic = require('../models/clinicSch')
@@ -14,12 +16,26 @@ router.use(bodyParser.urlencoded({ extended: true }))
 router.use(bodyParser.json())
 router.use(cookieParser())
 
+
+
+
 // USER related all the pages will be handled here
 
-router.get('/dashboard', auth, (req, res) => {
-    res.render('dashboard', {
-        username: req.user.username,
-    })
+router.get('/dashboard', auth, async (req, res) => {
+    try {
+        const person_id = req.user._id
+
+        const all_docs = await Document.find({ "person_id": person_id })
+
+        res.render('dashboard', {
+            username: req.user.username,
+            documents: all_docs,
+        })
+    }
+
+    catch (err) {
+        res.status(400).send(err)
+    }
 })
 
 router.get('/clinics', auth, async (req, res) => {
@@ -106,25 +122,94 @@ router.post('/signin', async (req, res) => {
 })
 
 
-router.post('/docadd', auth, async (req, res) => {
+// *********** Log Out User **************
+router.get('/logout', auth, async (req, res) => {
+    try{
+
+        // log out from all devices
+        req.user.tokens = []
+
+        res.clearCookie('Clinicare')
+
+        // console.log('log out success')
+
+        await req.user.save()
+
+        res.status(200).render('home')
+
+    }
+    catch(error){
+        res.status(500).send(error)
+    }
+})
+
+
+
+
+// ---- setting up multer storage and call-back function -----
+const storage = multer.memoryStorage()
+
+const upload = multer({
+
+    limits: 100000,
+
+    fileFilter(req, file, cb){
+
+        if(file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|PNG|png)$/)){
+            cb(undefined, true)
+        }
+
+        else{
+            cb(new Error("Please upload only .jpg file"))
+            cb(undefined,false)
+        }
+    },
+    
+    storage
+})
+
+
+router.post('/docadd', auth, upload.single('Prescription'), async (req, res) => {
 
     try {
-        console.log(req.body)
+        // console.log(req.user)
 
-        res.render('docadd')
+        // console.log(JSON.parse(JSON.stringify(req.body)))
+
+        // console.log(req)
+
+        const obj = JSON.parse(JSON.stringify(req.body))
+
+        // console.log(obj)
+        // console.log(req.file)
+
+        // req.document 
+        req.user.file = req.file.buffer
+
+        obj.person_id = req.user._id
+
+        obj.file = req.file.buffer
+
+        // console.log(obj)
+
+        const doc = new Document(obj)
+
+        const createDoc = await doc.save()
+
+        res.redirect('/docadd')
     }
 
     catch (error) {
-        // console.log(error)
         res.status(400).send(error)
     }
 })
 
+
 router.post('/clinicadd', auth, async (req, res) => {
 
     try {
-        // const obj = req.body
-        // obj.person_id = req.user._id
+        const obj = req.body
+        obj.person_id = req.user._id
 
         // console.log(obj)
 
@@ -136,7 +221,7 @@ router.post('/clinicadd', auth, async (req, res) => {
     }
 
     catch (error) {
-        // console.log(error)
+        console.log(error)
         res.status(400).send(error)
     }
 })

@@ -18,9 +18,9 @@ const docSchema = new mongoose.Schema({
     description: {
         type: String,
     },
-    // file: {
-    //     type: Binary data,
-    // }
+    file: {
+        type: Buffer,
+    }
 })
 
 const Document = mongoose.model('Document', docSchema)

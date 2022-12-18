@@ -25,10 +25,10 @@ const auth = async (req, res, next) => {
     }
 
     catch(error){
-        console.log('Not Authentic')
+        // console.log('Not Authentic')
 
         // res.status(401).send(error)
-        console.log(error)
+        // console.log(error)
         res.redirect('/signup')
     }
 }

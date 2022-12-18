@@ -43,104 +43,36 @@
                     My <span>Documents</span>
                 </h1>
 
-                <div class="box">
+                <% for(var i = 0; i < documents.length; i++) { %>
 
-                    <div class="image-heading">
+                    <div class="box">
 
-                        <div class="image">
-                            <i class="fas fa-user"></i>
+                        <div class="image-heading">
+    
+                            <div class="image">
+                                <i class="fas fa-user"></i>
+                            </div>
+    
+                            <div>
+                                <h3>Dr. <%= documents[i].docName %> </h3>
+                                <p> Date : <%= documents[i].visitDate %> </p>
+                            </div>
+    
                         </div>
+    
+                        <div class="document-description">
+    
+                            <p> <%= documents[i].description %> </p>
 
-                        <div>
-                            <h3>Dr. Rajdeep <span>Mallick</span></h3>
-                            <p> Date : 23.06.2022</p>
+                            <a href='#' target="_blank" class="btn">Prescription
+                                <span class="fas fa-angle-double-right"></span></a>
+    
                         </div>
-
+    
                     </div>
 
-                    <div class="document-description">
+                <% } %>
 
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum. Lorem ipsum
-                            dolor sit
-                            amet
-                            consectetur adipisicing elit. Itaque expedita eaque totam obcaecati minus
-                            inventore
-                            aliquid
-                            officiis aut quasi debitis sit maiores fugit quam impedit, laboriosam voluptatem
-                            nesciunt
-                            provident neque dicta hic!</p>
-                        <a href="/files/Assignment_CloudComputing_22-23.pdf" target="_blank" class="btn">Prescription
-                            <span class="fas fa-angle-double-right"></span></a>
-
-                    </div>
-
-                </div>
-
-                <div class="box">
-
-                    <div class="image-heading">
-
-                        <div class="image">
-                            <i class="fas fa-user"></i>
-                        </div>
-
-                        <div>
-                            <h3>Dr. Rajdeep <span>Mallick</span></h3>
-                            <p> Date : 23.06.2022</p>
-                        </div>
-
-                    </div>
-
-                    <div class="document-description">
-
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum. Lorem ipsum
-                            dolor sit
-                            amet
-                            consectetur adipisicing elit. Itaque expedita eaque totam obcaecati minus
-                            inventore
-                            aliquid
-                            officiis aut quasi debitis sit maiores fugit quam impedit, laboriosam voluptatem
-                            nesciunt
-                            provident neque dicta hic!</p>
-                        <a href="../public/files/Assignment_CloudComputing_22-23.pdf" target="_blank"
-                            class="btn">Prescription <span class="fas fa-angle-double-right"></span></a>
-
-                    </div>
-
-                </div>
-
-                <div class="box">
-
-                    <div class="image-heading">
-
-                        <div class="image">
-                            <i class="fas fa-user"></i>
-                        </div>
-
-                        <div>
-                            <h3>Dr. Rajdeep <span>Mallick</span></h3>
-                            <p> Date : 23.06.2022</p>
-                        </div>
-
-                    </div>
-
-                    <div class="document-description">
-
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum. Lorem ipsum
-                            dolor sit
-                            amet
-                            consectetur adipisicing elit. Itaque expedita eaque totam obcaecati minus
-                            inventore
-                            aliquid
-                            officiis aut quasi debitis sit maiores fugit quam impedit, laboriosam voluptatem
-                            nesciunt
-                            provident neque dicta hic!</p>
-                        <a href="../public/files/Assignment_CloudComputing_22-23.pdf" target="_blank"
-                            class="btn">Prescription <span class="fas fa-angle-double-right"></span></a>
-
-                    </div>
-
-                </div>
 
                 <div class="image" id="document-image">
                     <img src="./images/add docs.svg" alt="">
