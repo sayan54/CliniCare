@@ -17,7 +17,21 @@ router.use(bodyParser.json())
 router.use(cookieParser())
 
 
+router.get('/docs/:id', async (req, res) => {
+    try{
+        const id = req.params.id
+        // console.log(id)
 
+        const pic = await Document.findById(id)
+
+        res.set("Content-Type","image/jpg");
+        
+        res.send(pic.file)
+
+    }catch(error) {
+        console.log(error)
+    }
+})  
 
 // USER related all the pages will be handled here
 
@@ -108,7 +122,7 @@ router.post('/signin', async (req, res) => {
         const token = await user.generateAuthToken()
 
         res.cookie('Clinicare', token, {
-            expires: new Date(Date.now() + 24 * 60 * 60 * 10),
+            expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
             httpOnly: true
         })
 
@@ -196,7 +210,9 @@ router.post('/docadd', auth, upload.single('Prescription'), async (req, res) => 
 
         const createDoc = await doc.save()
 
-        res.redirect('/docadd')
+        res.render('docadd', {
+            username: req.user.username
+        })
     }
 
     catch (error) {
@@ -217,7 +233,9 @@ router.post('/clinicadd', auth, async (req, res) => {
 
         const createClinic = await clinic.save()
 
-        res.render('clinicadd')
+        res.render('clinicadd', {
+            username: req.user.username
+        })
     }
 
     catch (error) {

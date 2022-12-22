@@ -74,7 +74,7 @@ section:nth-child(odd) {
 .clinics .clinic .clinic-heading{
     text-align: center;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.3rem;
     color: #ffffff;
     margin-bottom: 1rem;
     background-color: #676fdd;

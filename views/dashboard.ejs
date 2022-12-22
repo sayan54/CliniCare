@@ -32,7 +32,7 @@
         <!-- ********** NAVBAR ENDS **********-->
 
 
-        <!-- ---- Documents Section ---- -->
+        <!-- ----***** Documents Section  *****---- -->
 
         <section class="documents-container" id="mydocs">
 
@@ -64,8 +64,9 @@
     
                             <p> <%= documents[i].description %> </p>
 
-                            <a href='#' target="_blank" class="btn">Prescription
-                                <span class="fas fa-angle-double-right"></span></a>
+                            <div class="btn" onclick="toggle('<%= i %>')">Prescription <span class="fas fa-angle-double-right"></span></div>
+
+                            <img src="/docs/<%= documents[i].id %>" alt="prec-img" id="img<%= i %>" class="imgContainer">
     
                         </div>
     
@@ -111,6 +112,24 @@
             navCloseBtn.addEventListener("click", () => {
                 nav.classList.remove("openNav");
             });
+
+            const imgContainer = document.getElementsByClassName('imgContainer')
+
+            for(let i = 0; i < imgContainer.length; i++){
+                imgContainer[i].hidden = true
+            };
+            
+            const toggle = (id) => {
+                const img = document.getElementById('img'+id);
+
+                if(!img.hidden){
+                    img.hidden = true;
+                }
+                else{
+                    img.hidden = false;
+                }
+
+            }
 
         </script>
 </body>

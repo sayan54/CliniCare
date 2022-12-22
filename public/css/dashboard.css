@@ -77,6 +77,13 @@ button {
     cursor: pointer;
 }
 
+.imgContainer{
+    margin: 2rem;
+    padding: 2rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+}
+
 /* ---*** Documents Container ***--- */
 
 .documents-container .documents {
