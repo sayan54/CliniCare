@@ -1,6 +1,6 @@
-INCOMPLETE TILL NOW
-
 This is clinics & prescription management application. 
-User can store his prescription with proper information so that he/she don't have to search here & there whenever need.
+User can store his prescription with proper information so that they don't have to search here & there whenever need.
 
-More ideas to come but before that, have to complete it.
+It is completed as of now. More ideas to come and will be deployed later.
+
+Feel free to use and give feedbacks for further improvement.
