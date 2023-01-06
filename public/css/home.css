@@ -327,7 +327,7 @@ section:nth-child(even){
     }
 
     .services .box-container .box{
-        margin: 0;
         padding: 1.3rem;
+        margin: 1rem 0;
     }
 }
