@@ -26,16 +26,8 @@ section {
     display: flex;
 }
 
-body{
-    padding-top: 6rem;
-}
-
 section:nth-child(even) {
     margin-bottom: 2.5rem;
-}
-
-section:nth-child(odd) {
-    background: #f1f1f1;
 }
 
 /* ---- */
@@ -51,24 +43,30 @@ section:nth-child(odd) {
 /* ------ Clinics Section ---- */
 .clinics{
     display: flex;
-    box-sizing: flexbox;
-    flex-wrap: wrap;
-    padding: 3rem;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 }
 
 .clinics .clinic{
+    flex-wrap: wrap;
     padding: 2rem;
     border: var(--border);
     border-radius: 0.8rem;
     text-align: left;
     box-shadow: var(--skill-box-shadow);
-    margin-bottom: 1.5rem;
+    margin: 1.5rem;
 }
 
 .clinics .clinic:hover{
     scale: 1.05;
+}
+
+.clinics .list-heading{
+    padding-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 .clinics .clinic .clinic-heading{
@@ -80,6 +78,14 @@ section:nth-child(odd) {
     background-color: #676fdd;
     padding: 0.8rem;
 }
+
+.clinics .container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: space-evenly;
+}
+
 
 .clinics .clinic .clinic-content>div{
     padding: 0.7rem;
@@ -108,6 +114,7 @@ section:nth-child(odd) {
     margin-right: 0.5rem;
 }
 
+/* ------------------------------------------------ */
 
 .slide-container {
     width: 100%;
@@ -128,9 +135,18 @@ section:nth-child(odd) {
     margin-right: 1.5rem;
 }
 
-
 #clinic-image img{
     height: 15rem;
     width: 15rem;
+}
+
+@media screen and (max-width: 475px) {
+    .list-heading{
+        font-size: 3rem;
+    }
+
+    .clinics .clinic .clinic-content>div>span{
+        font-size: 1rem;
+    }
 }
 

@@ -43,49 +43,68 @@
                     My <span>Documents</span>
                 </h1>
 
-                <% for(var i = 0; i < documents.length; i++) { %>
+                <% for(var i=0; i < documents.length; i++) { %>
 
                     <div class="box">
 
                         <div class="image-heading">
-    
-                            <div class="image">
-                                <i class="fas fa-user"></i>
-                            </div>
-    
+
                             <div>
-                                <h3>Dr. <%= documents[i].docName %> </h3>
-                                <p> Date : <%= documents[i].visitDate %> </p>
+                                <h3>Dr. <%= documents[i].docName %>
+                                </h3>
+                                <p> Date : <%= moment(documents[i].visitDate).format('DD MMMM YYYY') %>
+                                </p>
                             </div>
-    
+
                         </div>
-    
+
                         <div class="document-description">
-    
-                            <p> <%= documents[i].description %> </p>
 
-                            <div class="btn" onclick="toggle('<%= i %>')">Prescription <span class="fas fa-angle-double-right"></span></div>
+                            <p>
+                                <%= documents[i].description %>
+                            </p>
 
-                            <img src="/docs/<%= documents[i].id %>" alt="prec-img" id="img<%= i %>" class="imgContainer">
-    
+                            <!-- <div class="btn" onclick="toggle('<%= i %>')">Prescription <span class="fas fa-angle-double-right"></span></div>
+
+                            <div class="btn">Delete Item <span class="fas fa-trash-alt"></span></div> -->
+
+                            <div class="forms">
+
+                                <form action='/docs/<%= documents[i]._id %>' method="get">
+
+                                    <button type="submit" class="btn">Prescription <span
+                                            class="fas fa-image button-icon"></span>
+                                    </button>
+
+                                </form>
+
+                                <form action='/docs/delete/<%= documents[i]._id %>' method="post">
+
+                                    <button type="submit" class="btn">Remove <span
+                                            class="fas fa-trash-alt button-icon"></span>
+                                    </button>
+
+                                </form>
+
+                            </div>
                         </div>
-    
+
                     </div>
 
-                <% } %>
+                    <% } %>
 
 
-                <div class="image" id="document-image">
-                    <img src="./images/add docs.svg" alt="">
+                        <div class="image" id="document-image">
+                            <img src="./images/add docs.svg" alt="">
 
-                    <span>
-                        <a href="/docadd" target="_blank">
-                            <button class="btn">
-                                Add Document <span class="fas fa-angle-double-right"></span>
-                            </button>
-                        </a>
-                    </span>
-                </div>
+                            <span>
+                                <a href="/docadd" target="_blank">
+                                    <button class="btn">
+                                        Add Document <span class="fas fa-angle-double-right"></span>
+                                    </button>
+                                </a>
+                            </span>
+                        </div>
 
             </div>
 
@@ -112,24 +131,6 @@
             navCloseBtn.addEventListener("click", () => {
                 nav.classList.remove("openNav");
             });
-
-            const imgContainer = document.getElementsByClassName('imgContainer')
-
-            for(let i = 0; i < imgContainer.length; i++){
-                imgContainer[i].hidden = true
-            };
-            
-            const toggle = (id) => {
-                const img = document.getElementById('img'+id);
-
-                if(!img.hidden){
-                    img.hidden = true;
-                }
-                else{
-                    img.hidden = false;
-                }
-
-            }
 
         </script>
 </body>

@@ -15,6 +15,8 @@
     list-style: none;
     font-family: sans-serif;
     transition: all 0.2s ease-in-out;
+    
+    font-family: 'Montserrat', sans-serif;
 }
 
 html {
@@ -40,10 +42,6 @@ body {
 
 section:nth-child(even) {
     background: #ebe6f8;
-}
-
-button {
-    margin-left: 5rem;
 }
 
 /* ---*** Heading Section ***--- */
@@ -116,6 +114,7 @@ button {
 .documents-container .documents .box {
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 .documents-container .documents .box:hover {
@@ -150,21 +149,18 @@ button {
 
 .documents-container .documents .box .image-heading span {
     color: var(--blue);
-
 }
 
 .documents-container .documents .box .image-heading h3 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     padding-bottom: 1rem;
-    margin-left: 1.1rem;
     margin-top: 1rem;
     letter-spacing: 0;
     text-shadow: var(--text-shadow);
 }
 
 .documents-container .documents .box .image-heading p {
-    margin-left: 1.1rem;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
 }
 
 .documents-container .documents .box .document-description p {
@@ -179,7 +175,43 @@ button {
     transition: 0.2s ease-in-out;
 }
 
+.documents-container .documents .box .document-description .forms{
+    display: flex;
+}
+
+.documents-container .documents .box .document-description .forms form{
+    margin-right: 1rem;
+}
+
 #document-image img {
     height: 15rem;
     width: 15rem;
+}
+
+@media screen and (max-width: 780px) {
+    .documents-container .documents .heading {
+        font-size: 3.5rem;
+    }
+
+    .documents-container .documents .box .image-heading h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .btn{
+        font-size: 1.2rem;
+    }
+
+    .documents-container .documents .heading {
+        font-size: 3rem;
+    }
+
+    .documents-container .documents .box .image-heading h3 {
+        font-size: 1.8rem;
+    }
+
+    .documents-container .documents .box{
+        padding: 1rem;
+    }
 }

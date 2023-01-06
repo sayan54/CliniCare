@@ -55,7 +55,7 @@ section{
 /* ***** Booking section CSS ***** */
 
 .book{
-    padding-top: 6rem;
+    padding-top: 10rem;
 }
 
 .book .row{
@@ -64,21 +64,12 @@ section{
     flex-wrap: wrap;
 }
 
-.book .row .image{
-    flex: 1 1 25rem;
-    margin-top: -8rem;
-}
-
-.book .row .image img{
-    width: 65%;
-}
-
 .book .row form{
     flex: 1 1 20rem;
     background: #fff;
     border: var(--border);
-    text-align: center;
     box-shadow: var(--box-shadow);
+    text-align: center;
     padding: 2rem 1.3rem 1.3rem 1.3rem;
     border-radius: 0.8rem;
     margin-top: 1.1rem;
@@ -94,7 +85,6 @@ section{
     border-radius: 0.5rem;
     width: 100%;
     margin: 0.4rem 0;
-    
     border: var(--border);
     font-size: 1.1rem;
     padding: 1.1rem;
@@ -118,45 +108,6 @@ section{
     cursor: pointer;
 }
 
-textarea{
-    resize: none;
-}
-
-.book .row form .btn{
-    padding: 0.4rem 0.75rem;
-}
-
-.book .row form .allFiles{
-    display: flex;
-    flex-direction: column;
-}
-
-.book .row form .allFiles>div{
-    display: flex;
-    background-color: rgb(116, 116, 116);
-    color: #f1f1f1;
-}
-
-.book .row form .allFiles>div i{
-    font-size: 1.5rem;
-    margin-right: 0.8rem;
-}
-
-
-.book .row form .days{
-    display: flex; 
-    border: var(--border);
-    padding: 1.2rem;
-    border-radius: 0.5rem;
-}
-
-.book .row form .days input{
-    height: 1.2rem;
-    width: 1.2rem;
-    margin: 0 0.5rem 0 0.5rem;
-    display: inline-block;
-}
-
 .book .row .close-day-heading{
     font-size: 2.2rem;
     margin-bottom: 0;
@@ -165,8 +116,38 @@ textarea{
     letter-spacing: 0;
 }
 
+textarea{
+    resize: none;
+}
 
-.book .row form .days input:hover{
+.book .row form .btn{
+    padding: 0.4rem 0.75rem;
+}
+
+
+.book .row form .days{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: var(--border);
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+}
+
+.book .row form .days .each-day-input{
+    margin: 0.5rem 0.2rem;
+    display: flex;
+}
+
+.book .row form .days .each-day-input input{
+    height: 1.2rem;
+    width: 1.2rem;
+    margin: 0 0.5rem;
+    /* display: inline-block; */
+}
+
+
+.book .row form .days .each-day-input input:hover{
     color: #777;
     cursor: pointer;
 }
