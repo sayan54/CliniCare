@@ -3,7 +3,7 @@
     --light-color: #777;
     --box-shadow: 0.5rem 0.5rem 0 rgba(88, 42, 149, 0.2);
     --text-shadow: 0.3rem 0.3rem 0 rgb(199, 199, 199);
-    --border: 0.2rem solid var(--blue);
+    --border: 0.2rem solid #e2dbdb;
     --blue: #737be9;
 }
 
@@ -15,6 +15,10 @@
     transition: all 0.2s ease-in-out;
     text-decoration: none;
     background-color: var(--blue);
+}
+
+.btn{
+    border: var(--border);
 }
 
 .container{

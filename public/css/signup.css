@@ -130,38 +130,6 @@ form.sign-in-form {
     font-weight: 500;
 }
 
-.social-text {
-    padding: 0.7rem 0;
-    font-size: 1rem;
-}
-
-/* ---*** Media Icon CSS ***--- */
-
-.social-media {
-    display: flex;
-    justify-content: center;
-}
-
-.social-icon {
-    height: 3rem;
-    width: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 0.8rem;
-    color: var(--blue);
-    border: var(--border);
-    border-radius: 50%;
-    text-decoration: none;
-    font-size: 1.1rem;
-}
-
-.social-icon:hover {
-    background: var(--blue);
-    color: #fff;
-}
-
-
 /* ---*** Button CSS ***--- */
 
 .btn {

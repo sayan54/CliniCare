@@ -18,6 +18,18 @@ router.use(bodyParser.urlencoded({ extended: true }))
 router.use(bodyParser.json())
 router.use(cookieParser())
 
+// -----*** Home Page related routes ***----
+router.get('/medilist', (req, res) => {
+    res.render('static/idea-stage')
+})
+
+router.get('/clinicmanage', (req, res) => {
+    res.render('static/clinic-manage')
+})
+
+router.get('/presmanage', (req, res) => {
+    res.render('static/pres-manage')
+})
 //  --- *** USER related all the pages will be handled here ***---
 
 //  ----------/////// ******* DASHBOARD ******** \\\\\\\ ----------
@@ -39,7 +51,7 @@ router.get('/dashboard', auth, async (req, res) => {
 
     catch (err) {
         // res.status(400).send(err)
-        res.render('error', {
+        res.render('static/error', {
             reason: 'Dashboard Render Error'
         })
     }
@@ -62,7 +74,7 @@ router.get('/clinics', auth, async (req, res) => {
 
     catch (err) {
         // res.status(400).send(err)
-        res.render('error', {
+        res.render('static/error', {
             reason: 'Clinics Render Error'
         })
     }
@@ -80,8 +92,8 @@ router.post('/signup', async (req, res) => {
         const cpw = req.body.confirmpassword
 
         if (pw != cpw) {
-            console.log('Passwords are not matching')
-            return res.status(400).render('home')
+            // console.log('Passwords are not matching')
+            return res.status(400).render('static/no-pass-match')
         }
 
         const user = new User(req.body)
@@ -97,7 +109,7 @@ router.post('/signup', async (req, res) => {
         // console.log('Error found while sign up' + err)
         // res.status(400).send(err)
         // res.render('error')
-        res.render('error', {
+        res.render('static/error', {
             reason: 'Error in SignUp'
         })
     }
@@ -124,7 +136,7 @@ router.post('/signin', async (req, res) => {
     }
 
     catch (error) {
-        res.render('page404')
+        res.render('static/page404')
     }
 })
 
@@ -149,7 +161,7 @@ router.get('/logout', auth, async (req, res) => {
         // res.status(500).send(error)
         // res.render('error')
         // res.render(404)
-        res.render('error', {
+        res.render('static/error', {
             reason: 'Error in Logging Out'
         })
     }
@@ -217,7 +229,7 @@ router.post('/docadd', auth, upload.single('Prescription'), async (req, res) => 
     catch (error) {
         // res.render('error')
         // res.status(400).send(error)
-        res.render('error', {
+        res.render('static/error', {
             reason: 'Error in Adding Document'
         })
     }
@@ -236,7 +248,7 @@ router.get('/docs/:id', async (req, res) => {
 
     } catch (error) {
         // console.log(error)
-        res.render('page404')
+        res.render('static/page404')
     }
 })
 
@@ -263,7 +275,7 @@ router.post('/docs/delete/:id', auth, async (req, res) => {
         }, 201)
 
     } catch (err) {
-        res.render('error', {
+        res.render('static/error', {
             reason: 'Error in Deleting Document'
         })
     }
@@ -296,9 +308,9 @@ router.post('/clinicadd', auth, async (req, res) => {
     }
 
     catch (error) {
-        console.log(error)
+        // console.log(error)
         // res.status(400).send(error)
-        res.render('error')
+        res.render('static/error')
     }
 })
 
@@ -330,7 +342,7 @@ router.post('/clinics/delete/:id', auth, async (req, res) => {
     } catch (err) {
         // console.log(err)
         // res.status(500).send(err)
-        res.render('error')
+        res.render('static/error')
     }
 
 })

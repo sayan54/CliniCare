@@ -24,6 +24,11 @@ a{
     text-decoration: none;
 }
 
+p{
+    font-size: 1.2rem;
+    color: #444;
+}
+
 html{
     scroll-behavior: smooth;
 }
@@ -209,7 +214,7 @@ section:nth-child(even){
 }
 
 .services .box-container .box h3{
-    font-size: 2.3rem;
+    font-size: 2rem;
     color: var(--black);
     padding-bottom: 1rem;
 }
@@ -228,8 +233,10 @@ section:nth-child(even){
 /* ----- About US section ------ */
 .about .row{
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    text-align: center;
 }
 
 .about .row .image{
@@ -243,7 +250,12 @@ section:nth-child(even){
 
 .about .row .content{
     flex: 25rem;
-    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    flex-direction: column;
 }
 
 .about .row .content h3{
@@ -253,7 +265,7 @@ section:nth-child(even){
 }
 
 .about .row .content p{
-    padding: 1rem;
+    padding: 0.5rem;
     font-size: 1.3rem;
     color: var(--light-color);
 }
