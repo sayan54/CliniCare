@@ -40,6 +40,10 @@ section:nth-child(even) {
     color: var(--blue);
 }
 
+#clinic-image{
+    margin-left: 2rem;
+}
+
 /* ------ Clinics Section ---- */
 .clinics{
     display: flex;
