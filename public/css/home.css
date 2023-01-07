@@ -322,6 +322,10 @@ section:nth-child(even){
         margin-top: 1rem;
     }
 
+    .about .row .image{
+        padding-left: 0;
+    }
+
     .services .box-container .box .service-content-heading {
         font-size: 0.8rem;
     }
