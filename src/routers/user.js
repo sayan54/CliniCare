@@ -30,6 +30,10 @@ router.get('/clinicmanage', (req, res) => {
 router.get('/presmanage', (req, res) => {
     res.render('static/pres-manage')
 })
+
+router.get('/family', (req, res) => {
+    res.render('static/taking-care-good')
+})
 //  --- *** USER related all the pages will be handled here ***---
 
 //  ----------/////// ******* DASHBOARD ******** \\\\\\\ ----------

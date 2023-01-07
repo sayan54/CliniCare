@@ -38,3 +38,11 @@
 .container .description{
     padding: 2rem;
 }
+
+.container .description h1{
+    margin-bottom: 1rem;
+}
+
+.container .description p{
+    margin-bottom: 0.8rem;
+}
