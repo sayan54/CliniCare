@@ -326,6 +326,23 @@ section:nth-child(even){
         font-size: 0.8rem;
     }
 
+    .review .box{
+        padding: 1.5rem;
+    }
+
+    .slide-content{
+        padding: 0 1rem;
+    }
+
+    .review .box h3{
+        padding: 0.5rem;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 2rem;
+    }
+
     .services .box-container .box{
         padding: 1.3rem;
         margin: 1rem 0;
